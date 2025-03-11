@@ -6,7 +6,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Simple health check route
+// ✅ Root route to prevent "Cannot GET /" error
+app.get("/", (req, res) => {
+  res.send("LangGraph backend is running!");
+});
+
+// ✅ Health check route
 app.get("/status", (req, res) => {
   res.json({ message: "LangGraph backend is running!" });
 });
