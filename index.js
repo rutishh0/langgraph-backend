@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// LangGraph Example Route
+// Simple health check route
 app.get("/status", (req, res) => {
   res.json({ message: "LangGraph backend is running!" });
 });
